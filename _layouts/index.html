@@ -1,0 +1,132 @@
+{% include layouts/header.html %}
+<div>
+    <div class="content">
+        <div class="is-flex is-flex-direction-row">
+            <div class="left is-flex is-flex-grow-0 is-justify-content-center is-align-items-start is-flex-direction-column">
+               <h1 class="has-text-weight-bold is-size-3">{{ page.title }}</h1>
+               <p class="is-size-5 has-text-weight-light"> {{ page.subtitle }} </p>
+               <div class="is-flex is-flex-direction-row is-align-items-center">
+                    <i class="fa-solid fa-check" style="font-size: 20pt;"></i>
+                    <p class="has-text-centered is-size-5 has-text-weight-medium">Arquitetura residencial </p>
+               </div>
+               <div class="is-flex is-flex-direction-row is-align-items-center">
+                <i class="fa-solid fa-check" style="font-size: 20pt;"></i>
+                <p class="has-text-centered is-size-5 has-text-weight-medium">comercial </p>
+           </div>
+            </div>
+            <div class="is-flex is-flex-grow-3 is-justify-content-center is-align-items-center">
+                <img src="{{ site.baseurl }}/assets/images/logoIA.png" height="400" width="600">
+            </div>
+        </div>
+    </div>
+    
+    <div class="projetos is-flex is-justify-content-start is-align-items-center is-flex-direction-column">
+        <div class="projetos-item is-flex is-align-items-center is-justify-content-center is-flex-direction-column">
+            <h1 class="has-text-centered is-size-3 has-text-weight-medium">Somos Especialistas Em <br> <span class="has-text-weight-bold" style="color: #9a4e28;"> Projetar Ambientes Perfeitos</span></h1>
+            <h2 class="is-size-6 mt-4">{{ page.cliente }}</h2>
+        </div>
+        <div class="projeto-grind is-flex is-flex-direction-row is-flex-wrap-wrap mt-6">
+            {% for projeto in site.projetos %}
+                <a href="{{ site.baseurl }}{{ projeto.url  }}">
+                    <div class="projeto">
+                        <img src="{{ site.baseurl }}/assets/projetos/{{ projeto.imagem_principal }}" /> 
+                        <p>{{ projeto.title }}</p> 
+                    </div>
+                </a>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="sobre is-flex is-flex-direction-row">
+        <div class="sobre-item is-flex is-justify-content-center is-align-items-center">
+            <img src="{{ site.baseurl }}/assets/images/socias.png">
+        </div>
+        <div class="sobre-item is-flex is-flex-grow-1 is-justify-content-center is-align-items-center">
+            <p class="mx-6 has-text-weight-bold has-text-white is-size-6 has-text-justified"> {{ page.sobre }} </p>
+        </div>
+
+    </div>
+</div>
+
+{% include layouts/footer.html %}
+
+<style type="text/css">
+    .content{
+        max-height: 79vh;
+        min-height: 500px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5%;
+    }
+    .left{
+        /* width: 40%; */
+    }
+    .projetos{
+        width: 100vw;
+    }
+    .projetos-item{
+        width: 70%;
+    }
+    .projeto-grind{
+        max-height: 100vh;
+        min-height: 500px;
+
+        position: relative;
+        display: inline-block;
+    }
+    .projeto{
+        height: 350px;
+        width: calc(100vw / 4);
+
+        margin: 0px;
+        border: black solid 1px;
+        
+        
+        /* background-color: blueviolet; */
+    }
+    .projeto:hover{
+        height: 350px;
+        width: calc((100vw / 4));
+    }
+    .projeto img{
+        height: 100%;
+        width: 100%;
+
+        display: block;
+
+        filter: grayscale(100%);
+        transition: filter 0.5s ease;
+    }
+    .projeto img:hover{
+        height: 100%;
+        width: 100%;
+        filter: grayscale(0%);
+        
+    }
+    .projeto p{
+        position: relative;
+        bottom: 15%;
+        left: 5%;
+        font-size: 20pt;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .sobre{
+        width: 100vw;
+        height: 600px;
+        background-color: #788fab;
+    }
+    .sobre img{
+        height: 600px;
+        width: auto;
+
+        position: relative;
+        bottom: 90px;
+    }
+    .sobre-item{
+        width: calc((100vw / 2));
+    }
+  
+</style>

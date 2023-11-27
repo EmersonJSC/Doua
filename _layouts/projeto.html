@@ -1,0 +1,176 @@
+{% include layouts/header.html %}
+
+<div class="projeto my-6">
+    <div class="title">
+        <h1 class="title">{{ page.title }}</h1>
+        <hr>
+    </div>
+    
+
+    <div class="info is-flex is-flex-direction-row">
+        <div class="is-flex-grow-1">
+            <h1 class="title">Localização</h1>
+            <h2 class="subtitle"> {{ page.localizacao }} </h2>
+        </div>
+        <div class="linha-vertical"></div>
+        <div class="is-flex-grow-1">
+            <h1 class="title">Área</h1>
+            <h2 class="subtitle"> {{ page.area }} </h2>
+        </div>
+        <div class="linha-vertical"></div>
+        <div class="is-flex-grow-1">
+            <h1 class="title">descrição</h1>
+            <h2 class="subtitle"> {{ page.projeto_descricao }} </h2>
+        </div>
+    </div>
+
+    <div class="image-reference mt-6">
+        <img src="{{ site.baseurl }}/assets/projetos/{{ page.imagem_principal }}">
+    </div>
+
+    <div class="description mt-6">
+        <p> {{ page.description }} </p>
+    </div>
+</div>
+
+{% if page.secao_um %}
+<div class="secao_um mt-5">
+    <h1 class="title"> {{ page.secao_um_title }} </h1>
+
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_um_image_um }}">
+          </article>
+        </div>
+      </div>
+      
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_um_image_dois }}">
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_um_image_tres }}">
+          </article>
+        </div>
+      </div>
+      
+</div>
+{% endif %}
+
+{% if page.secao_dois %}
+<div class="secao_um mt-5">
+    <h1 class="title"> {{ page.secao_dois_title }} </h1>
+
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_dois_image_um }}">
+          </article>
+        </div>
+      </div>
+      
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_dois_image_dois }}">
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_dois_image_tres }}">
+          </article>
+        </div>
+      </div>
+      
+</div>
+{% endif %}
+
+{% if page.secao_tres %}
+<div class="secao_um mt-5">
+    <h1 class="title"> {{ page.secao_tres_title }} </h1>
+
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_tres_image_um }}">
+          </article>
+        </div>
+      </div>
+      
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_tres_image_dois }}">
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <img src="{{ site.baseurl }}/assets/projetos/{{ page.secao_tres_image_tres }}">
+          </article>
+        </div>
+      </div>
+      
+</div>
+{% endif %}
+
+{% include layouts/footer.html %}
+
+<style type="text/css">
+    .projeto{
+        width: 100vw;
+        height: auto;
+    }
+    .projeto hr{
+        border: black solid 1px;
+        width: 30%;
+    }
+    .linha-vertical {
+        border-left: 1px solid black; /* Cor e espessura da linha */
+        height: 70px; /* Altura da linha */
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .info{
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .image-reference{
+        width: 100vw;
+        height: 500px;
+        background-color: aqua;
+        overflow: hidden; 
+        margin-left: 0;
+    }
+    .image-reference img{
+        height: 100%;
+        width: 100%;
+        
+        object-fit: cover;
+        display: block;
+    }
+    .title{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .description{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .secao_um{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .tile img{
+        height: 100%;
+        width: 100%;
+        
+        object-fit: cover;
+        display: block;
+    }
+</style>
